@@ -1,0 +1,246 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+
+    /* COLORS */
+
+    --background-gradient-1: hsl(252, 100%, 67%);
+    --background-gradient-2: hsl(241, 81%, 54%);
+
+    --circle-gradient-1: hsla(256, 72%, 46%, 1);
+    --circle-gradient-2: hsla(241, 72%, 46%, 0);
+
+    --clr-red: 0, 100%, 67%;
+    --clr-yellow: 39, 100%, 56%;
+    --clr-teal: 166, 100%, 37%;
+    --clr-blue: 234, 85%, 45%;
+
+    --neutral-white: 0, 0%, 100%;
+    --neutral-pblue: 221, 100%, 96%;
+    --neutral-lavender: 241, 100%, 89%;
+    --neutral-gblue: 224, 30%, 27%;
+
+    /*TYPO*/
+
+    --fs-400: 1.125rem;
+    --fs-500: 1.25rem;
+    --fs-600: 1.5rem;
+    --fs-700: 1.75rem;
+    --fs-800: 2rem;
+    --fs-900: 5rem;
+
+    --font-family:'Hanken Grotesk', sans-serif;
+}
+
+body{
+    font-size: var(--fs-400);
+    font-family: var(--font-family);
+    /* color: hsl(var(--neutral-white)); */
+}
+
+.main-section{
+    min-height: 100dvh;
+}
+
+@media (min-width:600px)  {
+    .main-section{
+        display: grid;
+        place-items: center;
+    }
+    
+}
+
+.result-card{
+    box-shadow: 10px 10px 10px hsla(var(--neutral-gblue),.1);
+    max-width: 46rem;
+    display: grid;
+    background: hsl(var(--neutral-white));
+}
+
+@media (min-width:600px){
+    .result-card{
+        grid-template-columns: 1fr 1fr;
+        border-radius: 2em;
+    }
+}
+
+.result,
+.summary{
+    padding: 2.5em;
+}
+
+.result{
+    background: linear-gradient(
+                var(--background-gradient-1),
+                var(--background-gradient-2)
+    );
+    text-align: center;
+    border-radius: 0 0 2em 2em;
+    color: hsl(var(--neutral-lavender));
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+@media (min-width:600px){
+    .result{
+        border-radius: 2em;
+    }
+}
+
+p.circle{
+    background: linear-gradient(
+        var(--circle-gradient-1),
+        var(--circle-gradient-2)
+    );
+    display: grid;
+    place-content: center;
+    border-radius: 100%;
+    margin-inline: auto;
+    width: 12em;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+}
+
+.global-score{
+    display: block;
+    font-size: var(--fs-900);
+    font-weight: 800;
+    color: hsl(var(--neutral-white));
+}
+
+.result h3{
+    color: hsl(var(--neutral-white));
+    font-size: var(--fs-800);
+    margin-bottom: .5em;
+}
+
+.section-title{
+    font-size: var(--fs-500);
+    font-weight: 800;
+}
+
+/* .result .section-title{
+    margin-bottom: .5em;
+} */
+
+
+.summary{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 1em;
+}
+
+.summary .section-title{
+    color: var(--neutral-gblue);
+    margin-bottom: 1em;
+}
+
+.summary .specific-result-card{
+    padding: 1em;
+    font-weight: 500;
+    border-radius: .75em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.result-1{
+    color: hsla(var(--clr-red), .9);
+    background: hsla( var(--clr-red),.1 );
+}
+
+.result-2{
+    color: hsla(var(--clr-yellow, .9));
+    background: hsla( var(--clr-yellow),.1 );
+}
+
+.result-3{
+    color: hsla(var(--clr-teal), .9);
+    background: hsla( var(--clr-teal),.1 );
+}
+
+.result-4{
+    color: hsla(var(--clr-blue), .9);
+    background: hsla( var(--clr-blue),.1 );
+}
+
+.flex-group{
+    display: flex;
+    flex-direction: row;
+    gap: .5;
+}
+
+.specific-result-card svg{
+    margin-right: .5em;
+}
+
+.result-1 svg{
+    stroke: hsla( var(--clr-red), .9 );
+}
+
+.result-2 svg{
+    stroke: hsla( var(--clr-yellow), .9 );
+}
+
+.result-3 svg{
+    stroke: hsla( var(--clr-teal), .9 );
+}
+
+.result-4 svg{
+    stroke: hsla( var(--clr-blue), .9 );
+}
+
+.score{
+    color: hsla(var(--neutral-gblue), .5);
+}
+
+.summary-score{
+    color: hsla(var(--neutral-gblue), 1);
+}
+
+
+.btn{
+    margin-top: 1em;
+    background: hsl(var(--neutral-gblue));
+    font-weight: 500;
+    padding-block: 1em;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    border-radius: 2em;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus{
+    background: linear-gradient(
+        var(--background-gradient-1),
+        var(--background-gradient-2)
+    );
+}
+
+a.btn{
+    color: hsl(var(--neutral-white));
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
